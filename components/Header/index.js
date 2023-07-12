@@ -1,6 +1,23 @@
 'use client'
 export default function Header({theme = "light"}) {
 
+    function getRandomWith() {
+        let screenWidth = window.innerWidth;
+        return Math.floor(Math.random() * (screenWidth + 1));
+    }
+    function getRandomHeight() {
+        let screenHeight = window.innerHeight;
+        return Math.floor(Math.random() * (screenHeight + 1));
+    }
+
+    function escaping() {
+        document.querySelector(".escaping").style.transform = "translate("+getRandomWith()+"px,"+getRandomHeight()+"px)";
+    }
+
+    function fromHome() {
+            document.querySelector(".escaping").style.transform = "translate(0px,0px)";
+    }
+
     return (
         <header className={
             theme === "dark" ? "darkHeader" : "lightHeader"
@@ -8,13 +25,30 @@ export default function Header({theme = "light"}) {
             <div className="logoDiv">
                 <div className="logo">
                     <a href="/">
-                        <img src="/images/carrot-logo-min.png" alt="logo" />
+                        <img
+                            onMouseEnter={escaping}
+                            onMouseLeave={fromHome}
+                            className="escaping" src="/images/carrot-logo-min.png" alt="logo" />
                     </a>
+                    <div className="spaceArea"
+                         onMouseEnter={
+                             async()=>{
+                                 await escaping();
+                                 // set setInterval to run escaping function every 50ms
+                                 await setTimeout(escaping, 250);
+                                 await setTimeout(escaping, 150);
+
+                             }
+                         }
+                         onMouseLeave={fromHome}
+                    >
+                    </div>
                 </div>
             </div>
             <div className="navDiv">
                 <nav>
                     <ul>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/bunny-land">BunnyLand</a></li>
                         <li><a href="/roadmap">Roadmap</a></li>
                         <li className="goldenNav"><a href="/golden-carrot">Golden Carrot</a></li>

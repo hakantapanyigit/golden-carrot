@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
+import Socials from "../../components/Socials";
 export default function Home() {
   return (
     <main className="roadmapSection">
             <Header/>
+            <Socials/>
             <div className="container">
                 <div className="roadmap">
                     <p>
@@ -31,14 +33,82 @@ export default function Home() {
                         Integrating Bunny NFTs into the Starknet ecosystem.
                         Expanding the utility and adoption of NFTs through collaborations and partnerships.
                     </p>
-                    <p>
-                        <span>Utility Map:</span>
+                </div>
+                <div className="faq">
+                    <section className="faq-section">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-6 offset-md-3">
+                                    <div className="faq" id="accordion">
 
-                        Creating a community portal that offers exclusive access, advantages, and privileges to Bunny NFT owners.
-                        Providing NFT owners with special content, events, and discounts within the portal.
-                        Integrating a marketplace to facilitate NFT trading among community members.
-                        Organizing community events, contests, and rewards.
-                    </p>
+                                        <div className="card">
+                                            <div className="card-header" id="faqHeading-1">
+                                                <div className="mb-0">
+                                                    <h5 className="faq-title" data-toggle="collapse"
+                                                        data-target="#faqCollapse-1" data-aria-expanded="true"
+                                                        data-aria-controls="faqCollapse-1">
+                                                        <span className="badge">1</span>What is StarknetBunny NFT? What will be its benefit for me? If you're curious, click and learn 🥕
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-1" className="collapse" aria-labelledby="faqHeading-1"
+                                                 data-parent="#accordion">
+                                                <div className="card-body">
+                                                    <p>StarknetBunny will provide you the perfect community never seen before. <br/>
+                                                        1-) A community portal is being developed to provide exclusive access, advantages, and privileges to Bunny NFT owners.<br/>
+                                                        2-) The portal will offer special content, events, and discounts specifically tailored for NFT owners.<br/>
+                                                        3-) Additionally, a marketplace will be integrated within the portal to facilitate NFT trading among community members, along with community events, contests, and rewards.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div className="card">
+                                            <div className="card-header" id="faqHeading-1">
+                                                <div className="mb-0">
+                                                    <h5 className="faq-title" data-toggle="collapse"
+                                                        data-target="#faqCollapse-1" data-aria-expanded="true"
+                                                        data-aria-controls="faqCollapse-1">
+                                                        <span className="badge">2</span>What is Bunny Supply? What is Bunny mint price? When is mint day?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-1" className="collapse" aria-labelledby="faqHeading-1"
+                                                 data-parent="#accordion">
+                                                <div className="card-body">
+                                                    <p>be patient dude, all for now tba.<br/>
+                                                        Stay tuned 🐰
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div className="card">
+                                            <div className="card-header" id="faqHeading-1">
+                                                <div className="mb-0">
+                                                    <h5 className="faq-title" data-toggle="collapse"
+                                                        data-target="#faqCollapse-1" data-aria-expanded="true"
+                                                        data-aria-controls="faqCollapse-1">
+                                                        <span className="badge">3</span>WHAT İS GC?
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div id="faqCollapse-1" className="collapse" aria-labelledby="faqHeading-1"
+                                                 data-parent="#accordion">
+                                                <div className="card-body">
+                                                    <p>be patient dude, all for now tba.<br/>
+                                                        This is an excellent question. GC (Golden Carrot) is a community of 100 selected individuals from various networks that will help us create an exceptional community. These individuals will distribute 5 Carrot (Whitelist) each to their own communities, making our community truly unique. Stay tuned for more details. The race has begun
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
     </main>

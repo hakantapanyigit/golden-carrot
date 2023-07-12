@@ -1,9 +1,11 @@
 import Header from "@/components/Header";
+import Socials from "../../components/Socials";
 export default function Home() {
   return (
     <main className="goldenCarrotSection">
         <div className="goldenBg">
             <Header theme="dark" />
+            <Socials/>
             <div className="goldenCarrotContent">
                 <div className="leftContent">
                     <img src="/images/golden-carrot.png" alt="golden carrot"/>
