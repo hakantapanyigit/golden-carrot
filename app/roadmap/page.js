@@ -98,7 +98,7 @@ export default function Home() {
                                             <div id="faqCollapse-1" className="collapse" aria-labelledby="faqHeading-1"
                                                  data-parent="#accordion">
                                                 <div className="card-body">
-                                                    <p>be patient dude, all for now tba.<br/>
+                                                    <p>
                                                         This is an excellent question. GC (Golden Carrot) is a community of 100 selected individuals from various networks that will help us create an exceptional community. These individuals will distribute 5 Carrot (Whitelist) each to their own communities, making our community truly unique. Stay tuned for more details. The race has begun
                                                     </p>
                                                 </div>

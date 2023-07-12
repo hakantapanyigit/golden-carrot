@@ -3,11 +3,11 @@ export default function Header({theme = "light"}) {
 
     function getRandomWith() {
         let screenWidth = window.innerWidth;
-        return Math.floor(Math.random() * (screenWidth + 1));
+        return Math.floor(Math.random() * (screenWidth - 1));
     }
     function getRandomHeight() {
         let screenHeight = window.innerHeight;
-        return Math.floor(Math.random() * (screenHeight + 1));
+        return Math.floor(Math.random() * (screenHeight - 1));
     }
 
     function escaping() {
@@ -36,12 +36,14 @@ export default function Header({theme = "light"}) {
                                  await escaping();
                                  // set setInterval to run escaping function every 50ms
                                  await setTimeout(escaping, 250);
-                                 await setTimeout(escaping, 150);
 
                              }
                          }
                          onMouseLeave={fromHome}
                     >
+                        <span>
+                            Golden Carrot who catches the carrot wins
+                        </span>
                     </div>
                 </div>
             </div>
