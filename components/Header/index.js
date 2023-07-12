@@ -41,9 +41,6 @@ export default function Header({theme = "light"}) {
                          }
                          onMouseLeave={fromHome}
                     >
-                        <span>
-                            Golden Carrot who catches the carrot wins
-                        </span>
                     </div>
                 </div>
             </div>
