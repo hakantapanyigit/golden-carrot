@@ -47,7 +47,7 @@ export default function Home() {
                                                     <h5 className="faq-title" data-toggle="collapse"
                                                         data-target="#faqCollapse-1" data-aria-expanded="true"
                                                         data-aria-controls="faqCollapse-1">
-                                                        <span className="badge">1</span>What is StarknetBunny NFT? What will be its benefit for me? If you are curious, click and learn 🥕
+                                                        <span className="badge">1</span>What is StarknetBunny NFT? What will be its benefit for me? If you are curious, click and learn &#x1f955;
                                                     </h5>
                                                 </div>
                                             </div>
@@ -78,7 +78,7 @@ export default function Home() {
                                                  data-parent="#accordion">
                                                 <div className="card-body">
                                                     <p>be patient dude, all for now tba.<br/>
-                                                        Stay tuned 🐰
+                                                        Stay tuned &#x1f430;
                                                     </p>
                                                 </div>
                                             </div>
