@@ -47,7 +47,7 @@ export default function Home() {
                                                     <h5 className="faq-title" data-toggle="collapse"
                                                         data-target="#faqCollapse-1" data-aria-expanded="true"
                                                         data-aria-controls="faqCollapse-1">
-                                                        <span className="badge">1</span>What is StarknetBunny NFT? What will be its benefit for me? If you're curious, click and learn 🥕
+                                                        <span className="badge">1</span>What is StarknetBunny NFT? What will be its benefit for me? If you are curious, click and learn 🥕
                                                     </h5>
                                                 </div>
                                             </div>
