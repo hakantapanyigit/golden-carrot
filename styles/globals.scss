@@ -24,6 +24,7 @@ body {
   width: 100%;
   font-weight: 600;
   background: url(/images/background-light-no-text.png) no-repeat center/cover;
+  position: fixed;
 
 
   .goldenBg{
@@ -197,7 +198,8 @@ header{
   .navDivMobile{
     display: none;
     .hamburgerButton{
-      z-index: 100;
+      position: relative;
+      z-index: 101;
       svg{
         fill: #000000;
       }
@@ -208,13 +210,24 @@ header{
         }
     }
     .menuMobil{
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 100vw;
       height: 100vh;
       width: 100vw;
       background-color: #000;
       z-index: 100;
+      transition: all .3s ease-in-out;
+      overflow: hidden;
+      img{
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        transform: translate(-50%, 0);
+        height: 50%;
+        object-fit: cover;
+        z-index: -1;
+      }
       ul{
         width: 90%;
         padding: 0 5%;
@@ -400,41 +413,6 @@ header{
   }
 }
 
-
-@media screen and (max-width: 768px){
-  header{
-    width: 100%;
-    .navDiv{
-      display: none;
-    }
-    .navDivMobile{
-      display: flex;
-    }
-  }
-  .roadmapSection{
-    .container{
-      .roadmap{
-        p{
-          font-size: 0.8rem;
-          padding: 20px;
-          span{
-            font-size: 1rem;
-          }
-        }
-      }
-    }
-  }
-  .bunnyLandSection{
-    .bunnyLandContent{
-      .slogan{
-        font-size: 1.2rem;
-      }
-    }
-  }
-}
-
-
-
 .faq-section {
   width: 70%;
   margin: 0 auto;
@@ -528,6 +506,7 @@ header{
   position: absolute;
   bottom: 20px;
   right: 20px;
+  z-index: 10;
   .coming-soon{
     display: inline-block;
     opacity: 0;
@@ -566,4 +545,73 @@ header{
       }
     }
   }
+}
+
+
+@media screen and (max-width: 768px){
+  header{
+    width: 90%;
+    .logoDiv{
+      z-index: 101;
+    }
+    .navDiv{
+      display: none;
+    }
+    .navDivMobile{
+      display: flex;
+    }
+  }
+  .roadmapSection{
+    .container{
+      width: 90%;
+      margin: 0 auto;
+      .roadmap{
+        p{
+          font-size: 0.8rem;
+          padding: 30px;
+          span{
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .bunnyLandSection{
+    .bunnyLandContent{
+      justify-content: space-between;
+      .slogan{
+        font-size: 1.2rem;
+        margin: 10% 0 0;
+        padding: 10%;
+      }
+      .bunnyImg{
+
+      }
+    }
+  }
+
+  .faq-section {
+    width: 100% !important;
+    margin: 20px auto;
+    min-height: 100vh;
+    padding: 0 !important;
+    .container{
+      width: 100% !important;
+    }
+  }
+
+  .goldenCarrotSection{
+    .goldenBg {
+      overflow-y: scroll;
+      .goldenCarrotContent{
+        padding: 10% 0 20%;
+        top: 0 !important;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        transform: translate(0, 0);
+      }
+    }
+  }
+
 }

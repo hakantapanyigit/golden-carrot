@@ -49,7 +49,7 @@ export default function Header({theme = "light"}) {
 
             <div className="logoDiv">
                 <div className="logo">
-                    <a href="/">
+                    <a href="#">
                         <img
                             onMouseEnter={escaping}
                             onMouseLeave={fromHome}
@@ -83,9 +83,7 @@ export default function Header({theme = "light"}) {
             </div>
             <div className="navDivMobile">
                 <div
-                    className={
-                        theme === "dark" ? "hamburgerButton darkHamburgerButton" : "hamburgerButton"
-                    }
+                    className="hamburgerButton darkHamburgerButton"
                     onClick={()=>{
                         document.querySelector(".menuMobil").classList.toggle("openMenu");
                     }}
@@ -94,13 +92,15 @@ export default function Header({theme = "light"}) {
                         <path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"/>
                     </svg>
                 </div>
-                <nav className="menuMobil openMenu">
+                <nav className="menuMobil">
                     <ul>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/bunny-land">BunnyLand</a></li>
                         <li><a href="/roadmap">Roadmap</a></li>
                         <li className="goldenNav"><a href="/golden-carrot">Golden Carrot</a></li>
                         <li><a href="#">Connect Wallet</a></li>
                     </ul>
+                    <img src="/images/bunny-left.png" alt="bunny"/>
                 </nav>
             </div>
         </header>
