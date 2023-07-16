@@ -255,10 +255,10 @@ header{
         .goldenNav{
           a{
             color: #ffe600;
-            text-shadow: -2px 2px 2px #fff,
-            2px 2px 2px #fff,
-            2px -2px 2px #fff,
-            -2px -2px 2px #fff;
+            text-shadow: -1px 1px 1px #fff,
+            1px 1px 1px #fff,
+            1px -1px 1px #fff,
+            -1px -1px 1px #fff;
           }
         }
       }
@@ -588,6 +588,14 @@ header{
 
       }
     }
+  }
+
+  .goldenCarrotContent{
+    .rightContent{
+      margin-top: 20px;
+      text-align: justify;
+    }
+
   }
 
   .faq-section {
