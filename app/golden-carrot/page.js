@@ -8,7 +8,7 @@ import WL from "./wl.json"
 import Swal from "sweetalert2";
 export default function Home() {
 
-    const status = true;
+    const status = false;
 
     const textTweet = "I have been chosen for @StarknetBunny and we will create an amazing community together. I minted my Golden Carrot, the race has begun, and of course the bunnies will be the winners. LFG!" 
     const imageURI = "https://imgur.com/a/dFTupUt"
