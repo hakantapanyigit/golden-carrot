@@ -7,9 +7,12 @@ import WL from "./wl.json"
 export default function Home() {
     
     const [walletAddr,setWallet] = useState("")
+    let targetAddress = "0x0" + walletAddr.substring(2);
     
-    console.log(WL)
+   // console.log(targetAddress)
+    const match = WL.filter(item=>item.toLowerCase() === targetAddress.toLowerCase())
 
+   // console.log(match)
     async function handleDisconnect(options) {
         await disconnect(options)
     }
@@ -31,15 +34,14 @@ export default function Home() {
                         Golden Carrots the Bunny collection will be closed for sales and transfers until it is sold out. Each of you has the opportunity to distribute 5 whitelist spots to your community. Yes, you have been chosen to create a unique community for the Bunnies. As a Golden Carrot holder, you can mint 1 Free Bunny and an additional Bunny at the whitelist price. More utilities will be announced soon. Just know that you are incredibly lucky for being chosen.
                     </h6>
 
-
+        
                   {walletAddr != '' ?  
 
 
-
-                  <a className="mintButton">
-                        Mint
-                    </a> 
-                    
+                    (match.length > 0 ?  <a className="mintButton">
+                    Mint
+                </a>  : <center>You are not eligible !</center>)
+                 
                     :  <a className="mintButton" onClick={
                                 async () => {
                                     try {
@@ -50,7 +52,6 @@ export default function Home() {
                                         setWallet(wallet?.account?.address)
                                         if (wallet) {
                                             await wallet.enable({ showModal: true });
-                                            console.log(false)
                                         }
                                     } catch (err) {
                                         console.error(err);
