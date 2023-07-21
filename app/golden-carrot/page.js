@@ -5,19 +5,31 @@ import { connect, disconnect } from "get-starknet"
 import { useEffect, useState } from "react";
 import WL from "./wl.json"
 export default function Home() {
-    
+      
+    const textTweet = "I have been chosen for @StarknetBunny and we will create an amazing community together. I minted my Golden Carrot, the race has begun, and of course the bunnies will be the winners. LFG!" 
+    const imageURI = "https://imgur.com/a/dFTupUt"
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(textTweet)}&url=${encodeURIComponent(imageURI)}`;
+
+    let [control,setControl] = useState(0)
+
     const [walletAddr,setWallet] = useState("")
     let targetAddress = "0x0" + walletAddr.substring(2);
     
-   // console.log(targetAddress)
+    console.log(walletAddr)
     const match = WL.filter(item=>item.toLowerCase() === targetAddress.toLowerCase())
 
-   // console.log(match)
     async function handleDisconnect(options) {
         await disconnect(options)
     }
 
     useEffect(()=>{handleDisconnect()},[])
+
+    const mint= async()=>{
+        if(control===0){
+            window.open(tweetUrl, '_blank');
+             setControl(1)
+        }
+    }
 
   return (
     <main className="goldenCarrotSection">
@@ -38,9 +50,9 @@ export default function Home() {
                   {walletAddr != '' ?  
 
 
-                    (match.length > 0 ?  <a className="mintButton">
+                    (match.length > 0 ?  ( control == 0  ?<a className="mintButton" onClick={mint}>
                     Mint
-                </a>  : <center>You are not eligible !</center>)
+                   </a>:'')  : <center>You are not eligible !</center>)
                  
                     :  <a className="mintButton" onClick={
                                 async () => {
