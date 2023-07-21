@@ -7,7 +7,9 @@ import axios from "axios";
 import WL from "./wl.json"
 import Swal from "sweetalert2";
 export default function Home() {
-      
+
+    const status = true;
+
     const textTweet = "I have been chosen for @StarknetBunny and we will create an amazing community together. I minted my Golden Carrot, the race has begun, and of course the bunnies will be the winners. LFG!" 
     const imageURI = "https://imgur.com/a/dFTupUt"
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(textTweet)}&url=${encodeURIComponent(imageURI)}`;
@@ -85,34 +87,31 @@ export default function Home() {
                     </h6>
 
         
-                  {walletAddr != '' ?  
+        {status ?  (walletAddr != '' ?  
 
 
-                    (match.length > 0 ?  ( control == 0  ?<a className="mintButton" onClick={mint}>
-                    Mint
-                   </a>:'')  : <center>You are not eligible !</center>)
-                 
-                    :  <a className="mintButton" onClick={
-                                async () => {
-                                    try {
-                                        const wallet = await connect({
-                                            include: ["argentX","braavos"],
-                                            
-                                        });
-                                        setWallet(wallet?.account?.address)
-                                        if (wallet) {
-                                            await wallet.enable({ showModal: true });
-                                        }
-                                    } catch (err) {
-                                        console.error(err);
-                                    }
-                                }
-                             }>
-                                Connect Wallet
-                                </a>  }
-                  
-                   
+    (match.length > 0 ?  ( control == 0  ?<a className="mintButton" onClick={mint}>
+    Mint
+    </a>:'')  : <center>You are not eligible !</center>)
 
+    :  <a className="mintButton" onClick={
+            async () => {
+                try {
+                    const wallet = await connect({
+                        include: ["argentX","braavos"],
+                        
+                    });
+                    setWallet(wallet?.account?.address)
+                    if (wallet) {
+                        await wallet.enable({ showModal: true });
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+         }>
+            Connect Wallet
+            </a>  ) :''}
 
                 </div>
             </div>
