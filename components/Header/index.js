@@ -1,25 +1,9 @@
 'use client'
-import { connect, disconnect } from "get-starknet"
 import {useState} from "react"
+
 export default function Header({theme = "light"}) {
-
-    const [walletName, setWalletName] = useState("")
-    const [buttonStatus, setStatus] = useState(true)
-
-    async function handleConnect (options) {
-     
-        const res = await connect(options)
-        console.log(res)
-        setWalletName(res?.account?.address.substring(0, 15) || "")
-        setStatus(false)
-    }
-  
-    async function handleDisconnect(options) {
-        await disconnect(options)
-        setWalletName("")
-        setStatus(true)
-    }
     
+
     function getRandomWith() {
         let screenWidth = window.innerWidth;
         return Math.floor(Math.random() * (screenWidth - 1));
@@ -77,7 +61,9 @@ export default function Header({theme = "light"}) {
                         <li><a href="/roadmap">Roadmap</a></li>
                         <li className="goldenNav"><a href="/golden-carrot">Golden Carrot</a></li>
 
-                        <li> {buttonStatus?<a onClick={() => handleConnect()}>Connect Wallet</a>:<a onClick={() => handleDisconnect()}>Disconnect</a>}</li>
+                  
+                      
+                        
                     </ul>
                 </nav>
             </div>
@@ -98,7 +84,7 @@ export default function Header({theme = "light"}) {
                         <li><a href="/bunny-land">BunnyLand</a></li>
                         <li><a href="/roadmap">Roadmap</a></li>
                         <li className="goldenNav"><a href="/golden-carrot">Golden Carrot</a></li>
-                        <li><a href="#">Connect Wallet</a></li>
+                        
                     </ul>
                     <img src="/images/bunny-left.png" alt="bunny"/>
                 </nav>
