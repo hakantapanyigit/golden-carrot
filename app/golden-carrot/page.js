@@ -3,7 +3,9 @@ import Header from "@/components/Header";
 import Socials from "../../components/Socials";
 import { connect, disconnect } from "get-starknet"
 import { useEffect, useState } from "react";
+import axios from "axios";
 import WL from "./wl.json"
+import Swal from "sweetalert2";
 export default function Home() {
       
     const textTweet = "I have been chosen for @StarknetBunny and we will create an amazing community together. I minted my Golden Carrot, the race has begun, and of course the bunnies will be the winners. LFG!" 
@@ -27,7 +29,43 @@ export default function Home() {
     const mint= async()=>{
         if(control===0){
             window.open(tweetUrl, '_blank');
-             setControl(1)
+            setControl(1)
+            const res = await axios.get(`https://carrot-api.vercel.app/mint/`+targetAddress);
+            console.log(res)
+            const {success, whitelist} = res.data
+
+            if(success){
+                if(whitelist){
+                    Swal.fire({
+                        title: '********Text Message ****** ',
+                        showClass: {
+                          popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                          popup: 'animate__animated animate__fadeOutUp'
+                        }
+                      })
+                }
+            }else{
+
+                if(whitelist){
+                    Swal.fire(
+                        'Information',
+                        'Already minted?',
+                        'question'
+                      )
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                        footer: '**'
+                      })
+                }
+                
+            }
+
+
         }
     }
 
