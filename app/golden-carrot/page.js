@@ -7,14 +7,16 @@ import axios from "axios";
 import WL from "./wl.json"
 import Swal from "sweetalert2";
 export default function Home() {
-
-    const status = false;
+    const apiURL = "https://carrot-api.vercel.app"
+    const status = true;
 
     const textTweet = "I have been chosen for @StarknetBunny and we will create an amazing community together. I minted my Golden Carrot, the race has begun, and of course the bunnies will be the winners. LFG!" 
     const imageURI = "https://imgur.com/a/dFTupUt"
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(textTweet)}&url=${encodeURIComponent(imageURI)}`;
 
     let [control,setControl] = useState(0)
+
+    const [isMinted,setMinted] = useState(false)
 
     const [walletAddr,setWallet] = useState("")
     let targetAddress = "0x0" + walletAddr.substring(2);
@@ -25,6 +27,16 @@ export default function Home() {
     async function handleDisconnect(options) {
         await disconnect(options)
     }
+    const isMint = async()=>{
+        const res = await axios.get(`${apiURL}/control/`+targetAddress);
+        console.log(res)
+        if(res.data?.length > 0){
+            setMinted(true)
+        }
+    }
+    useEffect( ()=>{
+        isMint();
+    },[walletAddr])
 
     useEffect(()=>{handleDisconnect()},[])
 
@@ -32,7 +44,7 @@ export default function Home() {
         if(control===0){
             window.open(tweetUrl, '_blank');
             setControl(1)
-            const res = await axios.get(`https://carrot-api.vercel.app/mint/`+targetAddress);
+            const res = await axios.get(`${apiURL}/mint/`+targetAddress);
             console.log(res)
             const {success, whitelist} = res.data
 
@@ -88,11 +100,9 @@ export default function Home() {
 
         
         {status ?  (walletAddr != '' ?  
-
-
-    (match.length > 0 ?  ( control == 0  ?<a className="mintButton" onClick={mint}>
+    (match.length > 0 ?  ( control == 0  ?(!isMinted?<a className="mintButton" onClick={mint}>
     Mint
-    </a>:'')  : <center>You are not eligible !</center>)
+    </a>:'Already Minted'):'')  : <center>You are not eligible !</center>)
 
     :  <a className="mintButton" onClick={
             async () => {
