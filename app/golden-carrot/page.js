@@ -52,14 +52,18 @@ export default function Home() {
             if(success){
                 if(whitelist){
                     Swal.fire({
-                        title: 'Congratulations, your Mint transaction has been completed! To avoid charging you any fees, we are sending your Golden Carrot and Free Bunny to your wallet through an airdrop. Please do not delete the tweeted message, LFG!',
+                        title: 'Congratulations!',
+                        html: '<p style="font-size: 14px;">Your Mint transaction has been completed! To avoid charging you any fees, we are sending your Golden Carrot and Free Bunny to your wallet through an airdrop. Please do not delete the tweeted message, LFG!</p>',
                         showClass: {
                           popup: 'animate__animated animate__fadeInDown'
                         },
                         hideClass: {
                           popup: 'animate__animated animate__fadeOutUp'
-                        }
-                      })
+                        },
+                        confirmButtonColor: '#FFA500', 
+                        confirmButtonText: 'OK' 
+                      });
+                      
                 }
             }else{
 
