@@ -10,8 +10,8 @@ export default function Home() {
     const apiURL = "https://carrot-api.vercel.app"
     const status = true;
 
-    const textTweet = "I have been chosen for @StarknetBunny and we will create an amazing community together. I minted my Golden Carrot, the race has begun, and of course the bunnies will be the winners. LFG!" 
-    const imageURI = "https://imgur.com/a/dFTupUt"
+    const textTweet = "I have completed my Golden Carrot mint for Starknet Bunny. If you also want to join this amazing community, you can participate in the public sale by clicking the link below before it ends." 
+    const imageURI = "https://lp.starkguardians.com/project/19"
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(textTweet)}&url=${encodeURIComponent(imageURI)}`;
 
     let [control,setControl] = useState(0)
