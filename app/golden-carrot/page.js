@@ -17,6 +17,14 @@ export default function Home() {
     let [control,setControl] = useState(0)
 
     const [isMinted,setMinted] = useState(false)
+    
+    if(isMinted){
+        Swal.fire(
+            'Information',
+            'Congratulations, your Mint transaction has been completed! To avoid charging you any fees, we are sending your Golden Carrot and Free Bunny to your wallet through an airdrop. Please do not delete the tweeted message, LFG!',
+            'success'
+          )
+    }
 
     const [walletAddr,setWallet] = useState("")
     let targetAddress = "0x0" + walletAddr.substring(2);
