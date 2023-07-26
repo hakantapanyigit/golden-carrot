@@ -16,7 +16,7 @@ export default function Socials() {
              //           }, 1000);
              //       }
              //   }
-                href="https://discord.gg/2WwcS86J">
+                href="https://discord.gg/2WwcS86J" target="_blank">
                 <img src="/images/discord-square-color-icon.png" alt="discord" />
             </a>
             <a href="https://twitter.com/StarknetBunny" target="_blank">
