@@ -59,11 +59,7 @@ export default function Header({theme = "light"}) {
                         <li><a href="/">Home</a></li>
                         <li><a href="/bunny-land">BunnyLand</a></li>
                         <li><a href="/roadmap">Roadmap</a></li>
-                        <li className="goldenNav"><a href="/golden-carrot">Golden Carrot</a></li>
-
-                  
-                      
-                        
+                        {/**<li className="goldenNav"><a href="/golden-carrot">Golden Carrot</a></li> */}
                     </ul>
                 </nav>
             </div>
@@ -83,8 +79,7 @@ export default function Header({theme = "light"}) {
                         <li><a href="/">Home</a></li>
                         <li><a href="/bunny-land">BunnyLand</a></li>
                         <li><a href="/roadmap">Roadmap</a></li>
-                        <li className="goldenNav"><a href="/golden-carrot">Golden Carrot</a></li>
-                        
+                        {/*<li className="goldenNav"><a href="/golden-carrot">Golden Carrot</a></li>*/}                        
                     </ul>
                     <img src="/images/bunny-left.png" alt="bunny"/>
                 </nav>
